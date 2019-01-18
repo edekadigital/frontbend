@@ -16,4 +16,4 @@ before_install:
   - node --version
 
 script:
-  - npm run test
+  - npm run test:ci
