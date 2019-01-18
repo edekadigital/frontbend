@@ -1,0 +1,47 @@
+{
+  "viewports": {
+    "xs": {
+      "breakpoint": 0,
+      "width": 375
+    },
+    "s": {
+      "breakpoint": 575,
+      "width": 768
+    },
+    "m": {
+      "breakpoint": 1024,
+      "width": 1200
+    },
+    "l": {
+      "breakpoint": 1440,
+      "width": 1600,
+      "fallback": true
+    },
+    "xl": {
+      "breakpoint": 1920,
+      "width": 1920
+    }
+  },
+  "imageTypes": {
+    "stage": {
+      "url": "http://localhost:8000/",
+      "selector": ".stage__image",
+      "policy": "16x9"
+    },
+    "intro": {
+      "url": "http://localhost:8000/",
+      "selector": ".intro__image",
+      "policy": "1x1",
+      "policyOverrides": {
+        "xs": "16x9"
+      }
+    },
+    "product-teaser": {
+      "url": "http://localhost:8000/",
+      "selector": ".product-teaser__image",
+      "policy": "1x1",
+      "useRelativeUnit": false,
+      "retinaScale": 2
+    }
+  }
+}

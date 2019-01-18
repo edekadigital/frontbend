@@ -1,0 +1,19 @@
+{
+  "id": "product-teaser",
+  "sources": [
+    {
+      "policy": "1x1",
+      "widths": [
+        280,
+        560
+      ],
+      "sizes": [
+        "280px"
+      ]
+    }
+  ],
+  "src": {
+    "policy": "1x1",
+    "width": 280
+  }
+}

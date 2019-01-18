@@ -1,0 +1,32 @@
+{
+  "id": "intro",
+  "sources": [
+    {
+      "media": "(min-width: 575px)",
+      "policy": "1x1",
+      "widths": [
+        300,
+        400,
+        600
+      ],
+      "sizes": [
+        "(min-width: 1440px) 25vw",
+        "30vw"
+      ]
+    },
+    {
+      "policy": "16x9",
+      "widths": [
+        400,
+        600
+      ],
+      "sizes": [
+        "90vw"
+      ]
+    }
+  ],
+  "src": {
+    "policy": "1x1",
+    "width": 400
+  }
+}

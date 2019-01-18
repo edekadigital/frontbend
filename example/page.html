@@ -1,0 +1,165 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Frontbend</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    html, body {      
+      margin: 0;
+      padding: 0;
+    }
+
+    .stage {
+      position: relative;
+      width: 100%;
+      max-height: 70vh;
+      overflow: hidden;
+    }
+
+    .stage:before {
+      content: '';
+      display: block;
+      height: 0;
+      padding-top: 56.25%;
+      background: DarkGrey;
+    }
+
+    .intro {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .intro__wrapper {
+      width: 100%;
+    }
+
+    .intro__media {
+      position: relative;
+      width: 100%;
+    }
+
+    .intro__media:before {
+      content: '';
+      display: block;
+      height: 0;
+      padding-top: 56.25%;
+      background: DimGray;
+    }
+
+    .product-teaser {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .product-teaser__wrapper {
+      margin: -10px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .product-teaser__item {
+      margin: 10px;
+      flex: 0 0 280px;
+      width: 280px;
+    }
+
+    .product-teaser__media {
+      position: relative;
+      width: 100%;
+    }
+
+    .product-teaser__media:before {
+      content: '';
+      display: block;
+      height: 0;
+      padding-top: 100%;
+      background: Silver;
+    }
+
+    .stage__image,
+    .intro__image,
+    .product-teaser__image {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;      
+    }
+
+    @media only screen and (min-width: 575px) {
+      .intro__wrapper {
+        display: flex;
+        align-items: center;
+      }
+
+      .intro__media {
+        flex: 0 0 auto;
+        width: 30vw;
+        max-width: 400px;
+      }
+
+      .intro__media:before {
+        padding-top: 100%;
+      }
+
+      .intro__content {
+        margin: 0 0 0 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stage">
+    <img class="stage__image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+  </div>
+  <div class="intro">
+    <div class="intro__wrapper">
+      <div class="intro__media">
+        <img class="intro__image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+      </div>
+      <div class="intro__content">
+        <h1>Lorem Ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+  </div>
+  <div class="product-teaser">
+    <div class="product-teaser__wrapper">
+      <div class="product-teaser__item">
+        <div class="product-teaser__media">
+          <img class="product-teaser__image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+        </div>
+        <p>Lorem ipsum</p>
+      </div>
+      <div class="product-teaser__item">
+        <div class="product-teaser__media">
+          <img class="product-teaser__image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+        </div>
+        <p>Lorem ipsum</p>
+      </div>
+      <div class="product-teaser__item">
+        <div class="product-teaser__media">
+          <img class="product-teaser__image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+        </div>
+        <p>Lorem ipsum</p>
+      </div>
+      <div class="product-teaser__item">
+        <div class="product-teaser__media">
+          <img class="product-teaser__image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+        </div>
+        <p>Lorem ipsum</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
