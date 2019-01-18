@@ -1,4 +1,4 @@
-# Frontbend
+# Frontbend [![Build Status](https://travis-ci.org/edekadigital/frontbend.svg?branch=master)](https://travis-ci.org/edekadigital/frontbend)
 
 ## Intro
 
