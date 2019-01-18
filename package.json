@@ -24,7 +24,8 @@
     "clean": "rimraf lib",
     "build": "tsc",
     "prebuild": "npm run clean",
-    "test": "jest --verbose --detectOpenHandles",
+    "test": "jest --verbose",
+    "test:ci": "jest --verbose --ci --detectOpenHandles --maxWorkers=10",
     "lint": "tslint --project tsconfig.lint.json --fix",
     "format": "prettier \"**/*.{ts,ts,js,json,css,md}\" --write"
   },
