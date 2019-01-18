@@ -22,7 +22,7 @@
 
 ## Todos
 
-- CI Tests
-- Documentation
+- ~~CI Tests~~
 - Publish to NPM
+- Documentation
 - Add policies to config schema
