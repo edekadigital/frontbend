@@ -4,12 +4,20 @@
   "keywords": [
     "Responsive",
     "Images",
-    "Akamai",
-    "Image Manager"
+    "Srcset",
+    "Sizes"
   ],
   "author": "EDEKA DIGITAL GmbH",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edekadigital/frontbend"
+  },
+  "homepage": "https://github.com/edekadigital/frontbend#readme",
+  "bugs": {
+    "url": "https://github.com/edekadigital/frontbend/issues"
+  },
   "engines": {
     "node": ">=8.14.0"
   },
@@ -27,7 +35,8 @@
     "test": "jest --verbose",
     "test:ci": "jest --verbose --ci --detectOpenHandles --maxWorkers=2",
     "lint": "tslint --project tsconfig.lint.json --fix",
-    "format": "prettier \"**/*.{ts,ts,js,json,css,md}\" --write"
+    "format": "prettier \"**/*.{ts,ts,js,json,css,md}\" --write",
+    "prepublishOnly": "npm run test && npm run build"
   },
   "husky": {
     "hooks": {
