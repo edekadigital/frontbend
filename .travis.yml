@@ -17,3 +17,13 @@ before_install:
 
 script:
   - npm run test:ci
+
+deploy:
+  provider: npm
+  email: rene.schapka@gmail.com
+  api_key:
+    secure: KVfbExzGSQa15WeJKS6OG67uyzRbs/8XQElesdbOKHqB4wXn/o8z2E7HtHi+D7MSekJA2Y4CUsFmQPXd/0oTBRBepqdH4KEvazVSTg5axgkXCXktIybx3pwd4LEIVdNSGQiBismpYkNaYhsfI7YLhISV/oY3mPCER2LR4LcpxpFUCxli21YFJJyUg8FEc6mqyvQee/ks+TwdjAUfuf31Lbm0z1tviVhieQEJ1hmR1DreChtyfK37SpzxrJPevf4yR9FXu1MkLfl2PRxefTA7fhVunovkXHoHqknYYsTp+Tfva8y5NaewOcfiHFO9vsKCqGTOcldh5mZAlVvhYjxleEDpyj9BGcyjzaq/XsWYbvvighQoxpa8oyan1HG6YMGlyim/sNbjECNfjRv2pb5svygF1WbcNPURvnJ1ZIXgCWfjUkPXNh5/pHtvWPnTHQlstWe2iog+Mr0jahNI3lnND0ipe8hVluZNPMzO/Q8zruGIznBTL/bjIhxoqG5bIvlhn1tc0ojWHRNtfovyPx82ge9GajSbn57FZANAF6vyotTjYoJKWTOTALzW3lYemIbAnLIOZwDbYr+UMlXSD0NchcKF5XEzwuw0NvxWv5R+xkjH8YUm3ugQTi+yQSI4gkdSU5Z3Sa+A+2zkaQ+HwLdd2C4EH77lINs1L4ti451vXNg=
+  on:
+    tags: true
+    repo: edekadigital/frontbend
+    node: 10
