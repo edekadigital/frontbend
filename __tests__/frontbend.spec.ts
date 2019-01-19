@@ -35,7 +35,7 @@ describe('Frontbend', () => {
       const exampleResult = await analyze(getExampleConfig());
       expect(exampleResult).toBeInstanceOf(Object);
       done();
-    }, 15000);
+    }, 25000);
 
     test('throws an error when an element can not be selected', async done => {
       expect.assertions(1);
@@ -48,7 +48,7 @@ describe('Frontbend', () => {
         expect(error).toBeInstanceOf(Error);
       }
       done();
-    }, 15000);
+    }, 25000);
   });
 
   describe('writeResult', () => {
@@ -96,6 +96,6 @@ describe('Frontbend', () => {
       expect(existsSync(modifiedImageTypeOutputFile)).toBe(false);
 
       done();
-    }, 15000);
+    }, 25000);
   });
 });
