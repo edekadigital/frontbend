@@ -27,3 +27,5 @@ deploy:
     tags: true
     repo: edekadigital/frontbend
     node: 10
+    os: linux
+  skip_cleanup: true
