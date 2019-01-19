@@ -23,7 +23,7 @@ const argv: Arguments<any> = command(
         type: 'string',
       })
       .option('clean', { alias: 'c', default: false })
-      .option('open', { alias: 'o', default: true })
+      .option('open', { alias: 'o', default: false })
 ).help().argv;
 
 async function main() {
