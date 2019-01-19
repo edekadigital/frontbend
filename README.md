@@ -65,10 +65,10 @@ frontbend ./my/config.json ./my/output/ [options]
 
 **Options:**
 
-| Option          | Default value | Description                                                                                    |
-| --------------- | ------------- | ---------------------------------------------------------------------------------------------- |
-| `--clean`, `-c` | `false`       | Delete output directory before running **frontbend**.                                          |
-| `--open`, `-o`  | `false`       | Run in full version of Chromium. By default, **frontbend** launches Chromium in headless mode. |
+| Option    | Alias | Default value | Description                                                                                    |
+| --------- | ----- | ------------- | ---------------------------------------------------------------------------------------------- |
+| `--clean` | `-c`  | `false`       | Delete output directory before running **frontbend**.                                          |
+| `--open`  | `-o`  | `false`       | Run in full version of Chromium. By default, **frontbend** launches Chromium in headless mode. |
 
 ## Configuration
 
