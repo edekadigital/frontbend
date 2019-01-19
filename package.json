@@ -36,7 +36,7 @@
     "test:ci": "jest --verbose --ci --detectOpenHandles --maxWorkers=2",
     "lint": "tslint --project tsconfig.lint.json --fix",
     "format": "prettier \"**/*.{ts,ts,js,json,css,md}\" --write",
-    "prepublishOnly": "npm run test && npm run build"
+    "prepublishOnly": "npm run test:ci && npm run build"
   },
   "husky": {
     "hooks": {
