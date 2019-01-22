@@ -1,6 +1,6 @@
 {
   "name": "frontbend",
-  "description": "Responsive Image Analyzer",
+  "description": "Frontbend is a tool that automates the analysis of image dimensions accross various breakpoints.",
   "keywords": [
     "Responsive",
     "Images",
