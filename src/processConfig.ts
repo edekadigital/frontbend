@@ -11,8 +11,10 @@ function validate(config: any): IConfig {
 
 export function processConfig(
   config: IConfig
-): { viewports: IViewport[]; imageTypes: IImageType[] } {
+): { policies: {}; viewports: IViewport[]; imageTypes: IImageType[] } {
   const validatedConfig: IConfig = validate(config);
+
+  const policies = validatedConfig.policies;
 
   const viewports = Object.keys(validatedConfig.viewports)
     .map((id: string) => ({
@@ -35,6 +37,7 @@ export function processConfig(
   );
 
   return {
+    policies,
     imageTypes,
     viewports: viewports.map(viewport => ({
       ...viewport,

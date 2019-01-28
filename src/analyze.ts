@@ -15,13 +15,24 @@ const defaultOptions: IAnalyzeOptions = {
   open: false,
 };
 
+const defaultPoliciy = {
+  isOlderPolicy: false,
+  variables: [],
+  transformations: [],
+  output: {
+    perceptualQuality: 'mediumHigh',
+  },
+  video: false,
+};
+
 async function createContext(
   config: IConfig,
   options: IAnalyzeOptions
 ): Promise<IAnalyzeContext> {
-  const { viewports, imageTypes } = processConfig(config);
+  const { policies, viewports, imageTypes } = processConfig(config);
   const browser = await launch({ headless: !options.open });
   return {
+    policies,
     viewports,
     imageTypes,
     browser,
@@ -57,8 +68,14 @@ export async function analyze(
   );
 
   result.policies = Object.keys(sourcesGroupedByPolicy).map(id => ({
-    id,
-    widths: sortBy(uniq(flatMap(sourcesGroupedByPolicy[id], 'widths'))),
+    ...defaultPoliciy,
+    ...(context.policies[id] || {}),
+    ...{
+      id,
+      breakpoints: {
+        widths: sortBy(uniq(flatMap(sourcesGroupedByPolicy[id], 'widths'))),
+      },
+    },
   }));
 
   await context.browser.close();

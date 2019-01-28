@@ -30,6 +30,7 @@ export const fallbackViewportDetection: IConfigTest = {
         },
       },
       expectResult: {
+        policies: {},
         viewports: [
           {
             id: 'l',
@@ -90,6 +91,7 @@ export const fallbackViewportDetection: IConfigTest = {
         },
       },
       expectResult: {
+        policies: {},
         viewports: [
           {
             id: 'l',

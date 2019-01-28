@@ -1,4 +1,65 @@
 {
+  "policies": {
+    "1x1": {
+      "isOlderPolicy": false,
+      "transformations": [
+        {
+          "transformation": "Resize",
+          "type": "normal",
+          "aspect": "fit",
+          "width": 2160,
+          "height": 2160
+        },
+        {
+          "gravity": "Center",
+          "transformation": "Crop",
+          "height": 2160,
+          "width": 2160,
+          "allowExpansion": true
+        }
+      ],
+      "output": {
+        "perceptualQuality": "mediumHigh"
+      },
+      "video": false
+    },
+    "16x9": {
+      "isOlderPolicy": false,
+      "variables": [
+        {
+          "name": "gravity",
+          "type": "gravity",
+          "defaultValue": "Center"
+        }
+      ],
+      "transformations": [
+        {
+          "transformation": "Resize",
+          "type": "normal",
+          "aspect": "fill",
+          "width": 3840,
+          "height": 2160
+        },
+        {
+          "gravity": {
+            "var": "gravity"
+          },
+          "transformation": "Crop",
+          "height": 2160,
+          "width": 3840,
+          "allowExpansion": false
+        },
+        {
+          "transformation": "BackgroundColor",
+          "color": "#fff"
+        }
+      ],
+      "output": {
+        "perceptualQuality": "mediumHigh"
+      },
+      "video": false
+    }
+  },
   "viewports": {
     "xs": {
       "breakpoint": 0,

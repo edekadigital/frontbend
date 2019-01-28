@@ -2,7 +2,9 @@ import { Browser } from 'puppeteer';
 
 export interface IPolicyResult {
   id: string;
-  widths: number[];
+  breakpoints: {
+    widths: number[];
+  };
 }
 
 export interface IResult {
@@ -11,6 +13,9 @@ export interface IResult {
 }
 
 export interface IAnalyzeContext {
+  policies: {
+    [key: string]: {};
+  };
   viewports: any[];
   imageTypes: any[];
   browser: Browser;
@@ -38,6 +43,9 @@ export interface IImageTypeConfig {
 }
 
 export interface IConfig {
+  policies: {
+    [key: string]: {};
+  };
   viewports: {
     [key: string]: IViewportConfig;
   };

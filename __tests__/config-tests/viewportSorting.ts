@@ -29,6 +29,7 @@ export const viewportSorting: IConfigTest = {
         },
       },
       expectResult: {
+        policies: {},
         viewports: [
           {
             id: 'l',

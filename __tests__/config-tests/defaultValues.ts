@@ -19,6 +19,7 @@ export const defaultValues: IConfigTest = {
         },
       },
       expectResult: {
+        policies: {},
         viewports: [
           {
             id: 'xs',

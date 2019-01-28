@@ -6,6 +6,17 @@ import {
 } from '../constants';
 
 export const configSchema = Joi.object({
+  policies: Joi.object()
+    .pattern(/^/, {
+      isOlderPolicy: Joi.boolean(),
+      variables: Joi.array().items(Joi.object()),
+      transformations: Joi.array().items(Joi.object()),
+      output: Joi.object().keys({
+        perceptualQuality: Joi.string().required(),
+      }),
+      video: Joi.boolean(),
+    })
+    .default({}),
   viewports: Joi.object()
     .pattern(/^/, {
       breakpoint: Joi.number()
