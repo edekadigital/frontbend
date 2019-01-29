@@ -36,8 +36,12 @@ export const configSchema = Joi.object({
       url: Joi.string().required(),
       selector: Joi.string().required(),
       policy: Joi.string().default(DEFAULT_POLICY_NAME),
-      policyOverrides: Joi.object()
-        .pattern(/^/, [Joi.string().default(DEFAULT_POLICY_NAME)])
+      overrides: Joi.object()
+        .pattern(/^/, [
+          Joi.object().keys({
+            policy: Joi.string().required(),
+          }),
+        ])
         .optional(),
       credentials: Joi.object()
         .keys({

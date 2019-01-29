@@ -93,8 +93,10 @@
       "url": "http://localhost:8000/",
       "selector": ".intro__image",
       "policy": "1x1",
-      "policyOverrides": {
-        "xs": "16x9"
+      "overrides": {
+        "xs": {
+          "policy": "16x9"
+        }
       }
     },
     "product-teaser": {

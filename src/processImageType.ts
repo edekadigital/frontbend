@@ -1,4 +1,4 @@
-import { flatMap, uniq } from 'lodash';
+import { flatMap, uniq, get } from 'lodash';
 
 import { detectImageWidths } from './detectImageWidths';
 import { getGroupedIndexes, getRoundedImageWidth, getVW } from './helpers';
@@ -27,10 +27,8 @@ export async function processImageType(
     breakpoint ? `(min-width: ${breakpoint}px)` : undefined
   );
 
-  const policies: string[] = context.viewports.map(
-    viewport =>
-      (imageType.policyOverrides && imageType.policyOverrides[viewport.id]) ||
-      imageType.policy
+  const policies: string[] = context.viewports.map(viewport =>
+    get(imageType, ['overrides', viewport.id, 'policy'], imageType.policy)
   );
 
   const page = await context.browser.newPage();

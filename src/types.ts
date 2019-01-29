@@ -35,8 +35,10 @@ export interface IImageTypeConfig {
   };
   selector: string;
   policy: string;
-  policyOverrides?: {
-    [key: string]: string;
+  overrides?: {
+    [key: string]: {
+      policy?: string;
+    };
   };
   useRelativeUnit: boolean;
   retinaScale: number;
