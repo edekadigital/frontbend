@@ -1,3 +1,5 @@
+import { orderBy } from 'lodash';
+
 import { configSchema } from './schemas';
 import { IConfig, IImageType, IViewport } from './types';
 
@@ -16,12 +18,14 @@ export function processConfig(
 
   const policies = validatedConfig.policies;
 
-  const viewports = Object.keys(validatedConfig.viewports)
-    .map((id: string) => ({
+  const viewports = orderBy(
+    Object.keys(validatedConfig.viewports).map((id: string) => ({
       ...validatedConfig.viewports[id],
       id,
-    }))
-    .sort((a, b) => b.breakpoint - a.breakpoint);
+    })),
+    ['breakpoint'],
+    ['desc']
+  );
 
   const [fallbackViewport] = [...viewports]
     .reverse()

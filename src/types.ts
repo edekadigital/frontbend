@@ -16,8 +16,8 @@ export interface IAnalyzeContext {
   policies: {
     [key: string]: {};
   };
-  viewports: any[];
-  imageTypes: any[];
+  viewports: IViewport[];
+  imageTypes: IImageType[];
   browser: Browser;
 }
 
