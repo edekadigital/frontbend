@@ -17,11 +17,7 @@ export async function processImageType(
   const viewportWidths: number[] = context.viewports.map(({ width }) => width);
 
   const page = await context.browser.newPage();
-
-  if (imageType.credentials) {
-    await page.authenticate(imageType.credentials);
-  }
-
+  await page.authenticate(imageType.credentials);
   await page.goto(imageType.url);
 
   const imageWidths: number[] = await detectImageWidths(

@@ -55,6 +55,7 @@ export const fallbackViewportDetection: IConfigTest = {
           {
             id: 'image-type-a',
             url: 'http://www...',
+            credentials: null,
             selector: 'img',
             policy: DEFAULT_POLICY_NAME,
             retinaScale: DEFAULT_RETINA_SCALE,
@@ -116,6 +117,7 @@ export const fallbackViewportDetection: IConfigTest = {
           {
             id: 'image-type-a',
             url: 'http://www...',
+            credentials: null,
             selector: 'img',
             policy: DEFAULT_POLICY_NAME,
             retinaScale: DEFAULT_RETINA_SCALE,

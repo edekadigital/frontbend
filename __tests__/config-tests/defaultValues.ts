@@ -36,6 +36,7 @@ export const defaultValues: IConfigTest = {
             id: 'image-type-a',
             url: 'http://www...',
             selector: 'img',
+            credentials: null,
           },
         ],
       },

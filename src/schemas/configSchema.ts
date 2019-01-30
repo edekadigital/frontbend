@@ -48,7 +48,7 @@ export const configSchema = Joi.object({
           username: Joi.string().required(),
           password: Joi.string().required(),
         })
-        .optional(),
+        .default(null),
       useRelativeUnit: Joi.boolean().default(DEFAULT_USE_RELATIVE_UNIT),
       retinaScale: Joi.number()
         .positive()

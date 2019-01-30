@@ -1,4 +1,4 @@
-import { Browser } from 'puppeteer';
+import { Browser, AuthOptions } from 'puppeteer';
 
 export interface IPolicyResult {
   id: string;
@@ -29,10 +29,7 @@ export interface IViewportConfig {
 
 export interface IImageTypeConfig {
   url: string;
-  credentials?: {
-    username: string;
-    password: string;
-  };
+  credentials: AuthOptions | null;
   selector: string;
   policy: string;
   overrides?: {
