@@ -5,7 +5,10 @@
     "Responsive",
     "Images",
     "Srcset",
-    "Sizes"
+    "Sizes",
+    "Akamai",
+    "Image",
+    "Manager"
   ],
   "author": "EDEKA DIGITAL GmbH",
   "license": "MIT",
