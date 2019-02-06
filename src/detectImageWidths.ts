@@ -15,6 +15,8 @@ export async function detectImageWidths(
       height: tempViewportWidth,
     });
 
+    await page.reload({ waitUntil: 'load' });
+
     const imageElement = await page.$(selector);
     if (imageElement) {
       const boundingBox = await imageElement.boundingBox();
