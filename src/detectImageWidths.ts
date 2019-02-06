@@ -23,7 +23,7 @@ export async function detectImageWidths(
       imageWidth = boundingBox ? Math.round(boundingBox.width) : 0;
     } else {
       throw Error(
-        `No element found for selector '${selector}' (Url: ${page.url})`
+        `No element found for selector '${selector}' (Url: ${page.url()})`
       );
     }
 
