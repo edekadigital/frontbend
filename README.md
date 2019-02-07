@@ -1,6 +1,8 @@
-# Frontbend [![Build Status](https://travis-ci.org/edekadigital/frontbend.svg?branch=master)](https://travis-ci.org/edekadigital/frontbend)
+[![npm](https://img.shields.io/npm/v/frontbend.svg?style=flat)](https://www.npmjs.org/package/frontbend)
+[![Build Status](https://travis-ci.org/edekadigital/frontbend.svg?branch=master)](https://travis-ci.org/edekadigital/frontbend)
+[![Build status](https://ci.appveyor.com/api/projects/status/kitxpn9kkhgl7ahq/branch/master?svg=true)](https://ci.appveyor.com/project/edekadigital/frontbend/branch/master)
 
-## Intro
+# Frontbend
 
 **Frontbend** is a tool that automates the analysis of image dimensions accross various breakpoints.
 
