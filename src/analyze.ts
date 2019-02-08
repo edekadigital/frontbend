@@ -59,7 +59,7 @@ export async function analyze(
 
   const listrTasks: Listr.ListrTask[] = context.imageTypes.map(
     tempImageType => ({
-      title: `Analyze image Type "${tempImageType.id}"`,
+      title: `Analyze image type "${tempImageType.id}"`,
       task: async () => {
         result.imageTypes.push(await processImageType(tempImageType, context));
       },
