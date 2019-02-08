@@ -40,9 +40,10 @@ const frontbend = require('frontbend');
 
 **Options:**
 
-| Option | Default value | Description                                                                                    |
-| ------ | ------------- | ---------------------------------------------------------------------------------------------- |
-| `open` | `false`       | Run in full version of Chromium. By default, **frontbend** launches Chromium in headless mode. |
+| Option     | Default value | Description                                                                                    |
+| ---------- | ------------- | ---------------------------------------------------------------------------------------------- |
+| `parallel` | `1`           | Increase to allow multiple image types being processed in parallel.                            |
+| `open`     | `false`       | Run in full version of Chromium. By default, **frontbend** launches Chromium in headless mode. |
 
 #### `frontbend.writeResult(result [, options])`
 
@@ -67,10 +68,11 @@ frontbend ./my/config.json ./my/output/ [options]
 
 **Options:**
 
-| Option    | Alias | Default value | Description                                                                                    |
-| --------- | ----- | ------------- | ---------------------------------------------------------------------------------------------- |
-| `--clean` | `-c`  | `false`       | Delete output directory before running **frontbend**.                                          |
-| `--open`  | `-o`  | `false`       | Run in full version of Chromium. By default, **frontbend** launches Chromium in headless mode. |
+| Option       | Alias | Default value | Description                                                                                    |
+| ------------ | ----- | ------------- | ---------------------------------------------------------------------------------------------- |
+| `--parallel` | `-p`  | `1`           | Increase to allow multiple image types being processed in parallel.                            |
+| `--open`     | `-o`  | `false`       | Run in full version of Chromium. By default, **frontbend** launches Chromium in headless mode. |
+| `--clean`    | `-c`  | `false`       | Delete output directory before running **frontbend**.                                          |
 
 ## Configuration
 

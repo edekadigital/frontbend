@@ -22,8 +22,9 @@ const argv: Arguments<any> = command(
         describe: 'Output directory',
         type: 'string',
       })
-      .option('clean', { alias: 'c', default: false })
+      .option('parallel', { alias: 'p', default: 1 })
       .option('open', { alias: 'o', default: false })
+      .option('clean', { alias: 'c', default: false })
 ).help().argv;
 
 async function main() {
@@ -40,7 +41,10 @@ async function main() {
   try {
     const config = await readJsonFile(configFilePath);
 
-    const result = await analyze(config, { open: argv.open });
+    const result = await analyze(config, {
+      open: argv.open,
+      parallel: argv.parallel,
+    });
 
     await writeResult(result, outputDir, {
       clean: argv.clean,

@@ -19,6 +19,7 @@ export interface IAnalyzeContext {
   viewports: IViewport[];
   imageTypes: IImageType[];
   browser: Browser;
+  parallel: number;
 }
 
 export interface IViewportConfig {
@@ -81,6 +82,7 @@ export interface IImageTypeResult {
 }
 
 export interface IAnalyzeOptions {
+  parallel?: number;
   open?: boolean;
 }
 

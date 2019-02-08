@@ -1,5 +1,6 @@
 import { flatMap, groupBy, sortBy, uniq } from 'lodash';
 import { launch } from 'puppeteer';
+import * as Listr from 'listr';
 
 import { processConfig } from './processConfig';
 import { processImageType } from './processImageType';
@@ -13,6 +14,7 @@ import {
 
 const defaultOptions: IAnalyzeOptions = {
   open: false,
+  parallel: 1,
 };
 
 const defaultPoliciy = {
@@ -31,11 +33,13 @@ async function createContext(
 ): Promise<IAnalyzeContext> {
   const { policies, viewports, imageTypes } = processConfig(config);
   const browser = await launch({ headless: !options.open });
+  const parallel = options.parallel || 1;
   return {
     policies,
     viewports,
     imageTypes,
     browser,
+    parallel,
   };
 }
 
@@ -53,14 +57,18 @@ export async function analyze(
     policies: [],
   };
 
-  for (const tempImageType of context.imageTypes) {
-    const imageTypeResult: IImageTypeResult = await processImageType(
-      tempImageType,
-      context
-    );
+  const listrTasks: Listr.ListrTask[] = context.imageTypes.map(
+    tempImageType => ({
+      title: `Analyze image Type "${tempImageType.id}"`,
+      task: async () => {
+        result.imageTypes.push(await processImageType(tempImageType, context));
+      },
+    })
+  );
 
-    result.imageTypes.push(imageTypeResult);
-  }
+  await new Listr(listrTasks, {
+    concurrent: context.parallel,
+  }).run();
 
   const sourcesGroupedByPolicy: { [key: string]: IImageTypeResult[] } = groupBy(
     flatMap(result.imageTypes, 'sources'),
