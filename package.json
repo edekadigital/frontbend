@@ -36,7 +36,7 @@
     "build": "tsc",
     "prebuild": "npm run clean",
     "test": "jest --verbose",
-    "test:ci": "jest --ci",
+    "test:ci": "jest --ci --detectOpenHandles",
     "lint": "tslint --project tsconfig.lint.json --fix",
     "format": "prettier \"**/*.{ts,ts,js,json,css,md}\" --write",
     "prepublishOnly": "npm run test:ci && npm run build"
