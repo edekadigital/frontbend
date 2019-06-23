@@ -66,7 +66,7 @@ export async function processImageType(
         ])
       ),
       [identity]
-    );
+    ).filter(tempWidth => tempWidth > 0);
 
     const imageSizes = tempItemsList.map(tempItem => tempItem.imageSize);
 
