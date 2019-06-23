@@ -15,14 +15,12 @@ function getExampleConfig(): IConfig {
 let closeServer: () => Promise<any>;
 
 describe('Frontbend', () => {
-  beforeAll(async done => {
+  beforeAll(async () => {
     closeServer = await serveExamplePage(examplePageFile, 8000);
-    done();
   });
 
-  afterAll(async done => {
+  afterAll(async () => {
     await closeServer();
-    done();
   });
 
   describe('analyze()', () => {
@@ -30,14 +28,13 @@ describe('Frontbend', () => {
       expect(analyze).toBeInstanceOf(Function);
     });
 
-    test('analyzes example config successfully', async done => {
+    test('analyzes example config successfully', async () => {
       expect.assertions(1);
       const exampleResult = await analyze(getExampleConfig());
       expect(exampleResult).toBeInstanceOf(Object);
-      done();
     }, 25000);
 
-    test('throws an error when an element can not be selected', async done => {
+    test('throws an error when an element can not be selected', async () => {
       expect.assertions(1);
       const config = getExampleConfig();
       const [firstImageTypeKey] = Object.keys(config.imageTypes);
@@ -47,7 +44,6 @@ describe('Frontbend', () => {
       } catch (error) {
         expect(error).toBeInstanceOf(Error);
       }
-      done();
     }, 25000);
   });
 
@@ -56,7 +52,7 @@ describe('Frontbend', () => {
       expect(writeResult).toBeInstanceOf(Function);
     });
 
-    test('cleans output directory and writes result to output directy', async done => {
+    test('cleans output directory and writes result to output directy', async () => {
       expect.assertions(3);
 
       const modifiedImageTypeId = 'modified-image-type-id';
@@ -94,8 +90,6 @@ describe('Frontbend', () => {
        */
       await writeResult(exampleResult, exampleOutputDir, { clean: true });
       expect(existsSync(modifiedImageTypeOutputFile)).toBe(false);
-
-      done();
     }, 25000);
   });
 });
