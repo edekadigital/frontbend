@@ -39,7 +39,7 @@
     "test:ci": "jest --ci --detectOpenHandles --forceExit",
     "lint": "tslint --project tsconfig.lint.json --fix",
     "format": "prettier \"**/*.{ts,ts,js,json,css,md}\" --write",
-    "prepublishOnly": "npm run test:ci && npm run build"
+    "prepublishOnly": "npm run build"
   },
   "husky": {
     "hooks": {
